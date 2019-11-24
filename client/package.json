@@ -30,7 +30,7 @@
     "foreman": "^2.0.0",
     "jquery": "2.2.3",
     "marked": "^0.3.6",
-    "mongoose": "^4.12.4",
+    "mongoose": "^5.7.5",
     "nodemon": "^1.12.1",
     "react": "15.0.2",
     "react-bootstrap": "^0.31.3",
