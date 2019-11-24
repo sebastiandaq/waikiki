@@ -1,0 +1,159 @@
+[
+   {
+      "applicant_info":
+      [
+        {
+          "message":"Your application has been submitted"
+        }
+      ]
+   },
+   {
+      "applicant_assess":{
+
+      }
+   },
+   {
+      "applicant_status":{
+         "active_stage":4,
+         "status":"onhold",
+         "cancel_interview":true,
+         "reschedule_request":true,
+         "reschedule_details":"Jun 4th 2017, 12.30 PM",
+         "stages":[
+            {
+               "title":"First Round",
+               "interviewer":"Balaji",
+               "type":"in-person",
+               "description":"This stage is for certificate verification",
+               "feedback":"Feedback for applicants",
+               "information":"Information for applicants",
+               "interview_schedule_options":[
+                  {
+                     "date":"May 4th 2017",
+                     "time":"12.30 PM"
+                  },
+                  {
+                     "date":"May 24th 2017",
+                     "time":"1.45 PM"
+                  },
+                  {
+                     "date":"May 14th 2017",
+                     "time":"4.00 PM"
+                  }
+               ],
+               "interview_schedule_accepted":{
+                  "date":"May 14th 2017",
+                  "time":"4.00 PM"
+               },
+               "conducted_on":"Feb 10th 2017",
+               "result":"selected"
+            },
+            {
+               "title":"Technical Round",
+               "interviewer":"Athish",
+               "type":"telephone",
+               "description":"Make sure you allocate 1 hour for this round",
+               "feedback":"Feedback for applicants",
+               "information":"Information for applicants",
+               "interview_schedule_options":[
+                  {
+                     "data":"May 4th 2017",
+                     "time":"12.30 PM"
+                  },
+                  {
+                     "date":"May 24th 2017",
+                     "time":"1.45 PM"
+                  },
+                  {
+                     "date":"May 14th 2017",
+                     "time":"4.00 PM"
+                  }
+               ],
+               "interview_schedule_accepted":{
+                  "date":"May 14th 2017",
+                  "time":"4.00 PM"
+               },
+               "conducted_on":"Apr 11th 2017",
+               "result":"selected"
+            },
+            {
+               "title":"HR Round",
+               "interviewer":"Balaji",
+               "type":"online",
+               "description":"You will be asked serveral questions online by one of our HR",
+               "feedback":"Feedback for applicants",
+               "information":"Information for applicants",
+               "interview_schedule_options":[
+                  {
+                     "data":"May 4th 2017",
+                     "time":"12.30 PM"
+                  },
+                  {
+                     "date":"May 24th 2017",
+                     "time":"1.45 PM"
+                  },
+                  {
+                     "date":"May 14th 2017",
+                     "time":"4.00 PM"
+                  }
+               ],
+               "interview_schedule_accepted":{
+                  "date":"May 14th 2017",
+                  "time":"4.00 PM"
+               },
+               "conducted_on":"Oct 5th 2017",
+               "result":"selected"
+            },
+            {
+               "title":"Group Discussion",
+               "interviewer":"Siddharth",
+               "type":"in-person",
+               "description":"Group discussion ",
+               "feedback":"Feedback for applicants",
+               "information":"Information for applicants",
+               "interview_schedule_options":[
+                  {
+                     "data":"May 4th 2017",
+                     "time":"12.30 PM"
+                  },
+                  {
+                     "date":"May 24th 2017",
+                     "time":"1.45 PM"
+                  },
+                  {
+                     "date":"May 14th 2017",
+                     "time":"4.00 PM"
+                  }
+               ],
+               "interview_schedule_accepted":{
+                  "date":"May 14th 2017",
+                  "time":"4.00 PM"
+               },
+               "conducted_on":"",
+               "result":""
+            },
+            {
+               "title":"Final Round",
+               "interviewer":"Balaji",
+               "type":"in-person",
+               "description":"Salary package and other discussion",
+               "feedback":"Feedback for applicants",
+               "information":"Information for applicants",
+               "interview_schedule_options":[],
+               "interview_schedule_accepted":{
+                  "date":"",
+                  "time":""
+               },
+               "conducted_on":"",
+               "result":""
+            }
+         ]
+      }
+   },
+   {
+      "system":{
+         "id":"12345678",
+         "default_message":"Your application has been received and has not been reviewed yet"
+      }
+   }
+]

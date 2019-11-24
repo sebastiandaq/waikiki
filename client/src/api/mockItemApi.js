@@ -1,0 +1,73 @@
+import delay from './delay';
+
+// This file mocks a web API by working with the hard-coded data below.
+// It uses setTimeout to simulate the delay of an AJAX call.
+// All calls return promises.
+const items = [
+  {
+    id: "1",
+    title: "bangles",
+    description: "Diamond Bangles from London Diamond Bangles from London Diamond Bangles from London Diamond Bangles from London Diamond Bangles from London Diamond Bangles from London Diamond Bangles from London Diamond Bangles from London Diamond Bangles from London",
+    price: "200",
+    image: "bangles.jpg",
+    category: "diamond",
+    count: 2
+  },
+  {
+    id: "2",
+    title: "earrings",
+    description: "Diamond Earrings from London Diamond Earrings from London Diamond Earrings from London Diamond Earrings from London Diamond Earrings from London Diamond Earrings from London Diamond Earrings from London Diamond Earrings from London Diamond Earrings from London",
+    price: "150",
+    image: "earring.jpg",
+    category: "diamond",
+    count: 0
+  },
+  {
+    id: "3",
+    title: "rings",
+    description: "Gold Rings from Canada Gold Rings from Canada Gold Rings from Canada Gold Rings from Canada Gold Rings from Canada Gold Rings from Canada Gold Rings from Canada Gold Rings from Canada Gold Rings from Canada Gold Rings from Canada",
+    price: "255",
+    image: "ring.jpg",
+    category: "gold",
+    count: 4
+  },
+  {
+    id: "4",
+    title: "anklets",
+    description: "Silver Anklets from India Silver Anklets from India Silver Anklets from India Silver Anklets from India Silver Anklets from India Silver Anklets from India Silver Anklets from India Silver Anklets from India Silver Anklets from India Silver Anklets from India",
+    price: "25",
+    image: "anklet.jpg",
+    category: "silver",
+    count: 7
+  },
+  {
+    id: "5",
+    title: "nose-ring",
+    description: "Platinum nose rings from Switzerland Platinum nose rings from Switzerland Platinum nose rings from Switzerland Platinum nose rings from Switzerland Platinum nose rings from Switzerland Platinum nose rings from Switzerland Platinum nose rings from Switzerland",
+    price: "355",
+    image: "nose_ring.jpg",
+    category: "platinum",
+    count: 0
+  },
+  {
+    id: "6",
+    title: "necklace",
+    description: "Ruby Necklace from Africa Ruby Necklace from Africa Ruby Necklace from Africa Ruby Necklace from Africa Ruby Necklace from Africa Ruby Necklace from Africa Ruby Necklace from Africa Ruby Necklace from Africa Ruby Necklace from Africa Ruby Necklace from Africa",
+    price: "455",
+    image: "necklace.png",
+    category: "ruby",
+    count: 5
+  }
+];
+
+class ItemApi {
+  static getAllItems() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(Object.assign([], items));
+      }, delay);
+    });
+  }
+}
+
+export default ItemApi;

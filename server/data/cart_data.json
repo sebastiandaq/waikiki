@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "bangles",
+    "description": "Diamond Bangles from London Diamond Bangles from London Diamond Bangles from London Diamond Bangles from London Diamond Bangles from London Diamond Bangles from London Diamond Bangles from London Diamond Bangles from London Diamond Bangles from London",
+    "price": 200,
+    "image": "bangles.jpg",
+    "category": "diamond",
+    "count": 1
+  },
+  {
+    "id": 3,
+    "title": "rings",
+    "description": "Gold Rings from Canada Gold Rings from Canada Gold Rings from Canada Gold Rings from Canada Gold Rings from Canada Gold Rings from Canada Gold Rings from Canada Gold Rings from Canada Gold Rings from Canada Gold Rings from Canada",
+    "price": 255,
+    "image": "ring.jpg",
+    "category": "gold",
+    "count": 1
+  },
+  {
+    "id": 6,
+    "title": "necklace",
+    "description": "Ruby Necklace from Africa Ruby Necklace from Africa Ruby Necklace from Africa Ruby Necklace from Africa Ruby Necklace from Africa Ruby Necklace from Africa Ruby Necklace from Africa Ruby Necklace from Africa Ruby Necklace from Africa Ruby Necklace from Africa",
+    "price": 455,
+    "image": "necklace.png",
+    "category": "ruby",
+    "count": 3
+  }
+]

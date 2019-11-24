@@ -1,0 +1,544 @@
+@import url(http://fonts.googleapis.com/css?family=Khula:400,300);
+
+//Variables generales
+@hx-color: #ef3d37;
+@hx-onHoverColor: #CA342F;
+
+//Funciones generales.
+.logo(@logoHeight) {
+  height: @logoHeight;
+}
+.etchy-textbox(@height, @width:100%) {
+  border: 1px solid #ccc;
+  box-shadow: none;
+  height: @height !important;
+  border-radius: 0px;
+  .appearance-none();
+  &:focus{
+    .outline-shadow-none();
+  }
+}
+.etchy-select(@height, @width:100%) {
+	background: #FFF url("/img/select_dropdown.png") no-repeat scroll 100% 9px;
+  padding-top: 5px;
+  width: @width;
+  height: @height;
+  border-radius: 0px;
+  border: 1px solid #ccc;
+  .outline-shadow-none();
+  .appearance-none();
+  &:focus{
+    .outline-shadow-none();
+  }
+}
+.etchy-form-field-description(@font-size:12px) {
+  color: #777;
+  font-size: @font-size;
+}
+.etchy-radio-checkbox-btns(@height) {
+  padding: 3px 25px;
+  min-height: @height;
+}
+.etchy-submit(@width:150px) {
+	width: @width;
+	border-radius: 2px;
+  padding: 10px 16px;
+  line-height: 1.3;
+  font-size: 16px;
+  margin: auto;
+  display: block;
+  &:focus{
+    .outline-shadow-none();
+  }
+  &:active{
+    .outline-shadow-none();
+  }
+}
+.outline-shadow-none() {
+  outline: none;
+  box-shadow: none;
+}
+.appearance-none() {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+}
+.required-label() {
+  content: "*";
+  color: red;
+}
+.box-shadow(@h_s, @v_s, @blur, @spread, @color:#000){
+  -webkit-box-shadow: @h_s @v_s @blur @spread @color;
+  -moz-box-shadow: @h_s @v_s @blur @spread @color;
+  box-shadow: @h_s @v_s @blur @spread @color;
+}
+.box-shadow() {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.circle(@rad) {
+  width: @rad;
+  height: @rad;
+  border-radius: 50%;
+}
+
+p{
+  margin: 0px;
+  padding: 0px;
+}
+
+/**** disabling bootstrap CSS */
+.form-group{
+  margin: 0px 0px 10px 0px !important;
+  padding: 5px !important;
+}
+.control-label{
+  padding: 10px 15px !important;
+}
+/* disabling bootstrap CSS ****/
+/**** Override Alertify */
+.ajs-message.ajs-visible{
+  color: #fff;
+}
+/* Override Alertify ****/
+
+body{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Khula', sans-serif;
+}
+
+/**** Primary Header */
+header{
+  margin: 10px 15px 40px 15px;
+  height: 80px;
+  @media (max-width: 767px){
+    height: auto;
+  }
+}
+#companyLogo{
+  float: left;
+  img{
+    .logo(80px);
+    @media(max-width: 767px){
+      margin: auto;
+      display: block;
+      max-width: 250px;
+    }
+  }
+  @media(max-width: 767px){
+    float: none;
+  }
+}
+.default-message{
+  text-align: center;
+}
+#userValidation{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  text-align: center;
+  input{
+    text-align: center;
+  }
+  button{
+    .etchy-submit();
+    background: #5cb85c;
+    color: #fff;
+    margin-top: 20px;
+  }
+}
+#headerApplicantDetails{
+  float: right;
+  p{
+    margin: 15px 10px;
+    color: #999;
+    span{
+      color: #000;
+    }
+  }
+  @media(max-width: 767px) {
+    float: none;
+    text-align: center;
+  }
+}
+/* Primary Header ****/
+
+/**** Applicant content */
+.applicant-content-container{
+  width: 100%;
+  margin-bottom: 30px;
+
+  .hx-content-title-container > *{
+    display: inline;
+  }
+  .hx-content-title-container{
+    width: 720px;
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+    .hx-content-navigator{
+      font-size: 18px;
+      cursor: pointer;
+      padding: 5px 10px;
+      color: #000;
+      &:hover{
+        color: #000;
+      }
+      @media(max-width: 767px) {
+        padding: 0px;
+      }
+    }
+    .hx-content-title{
+      font-weight: 300;
+      @media(max-width: 767px){
+        font-size: 20px;
+      }
+    }
+    @media(max-width: 767px) {
+      width: 98%;
+    }
+  }
+  .applicant-info-container{
+    width: 720px;
+    margin: auto;
+    padding: 20px 15px;
+    .applicant-details{
+      width: 100%;
+      min-height: 40px;
+      @media(max-width: 767px) {
+        margin: 10px 0px;
+      }
+      .applicant-detail-label{
+        width: 40%;
+        font-weight: 700;
+        @media (max-width: 767px) {
+          width: 100%;
+        }
+      }
+      span{
+        width: 5%;
+        text-align: center;
+        padding: 0px 2%;
+        @media (max-width: 767px) {
+          display: none;
+        }
+      }
+      .applicant-detail-value{
+        width: 55%;
+        font-weight: 300;
+        @media(max-width: 767px){
+          width: 100%;
+        }
+      }
+    }
+  }
+  .applicant-status-container{
+    background-color: #EFEFEF;
+    width: 100%;
+    padding: 20px;
+    .applicant-status-header-container{
+      text-align: center;
+      .applicant-stage-number{
+        .circle(60px);
+        font-size: 16px;
+        padding: 22px 0px;
+        margin: auto;
+        background-color: #fff;
+        .box-shadow(0px, 0px, 4px, 1px, rgb(255, 177, 0));
+        &.active{
+          background-color: #66CC69;
+          color: #fff;
+        }
+        &.on-hold{
+          background-color: #efd72e;
+          color: #fff;
+        }
+      }
+      .applicant-stage-title{
+        margin-top: 10px;
+      }
+    }
+    .applicant-status-details-container{
+      margin: 20px 0px;
+      .applicant-status-sub-details{
+        width: 100%;
+        font-size: 16px;
+        label{
+          width: 80px;
+          font-weight: 700;
+        }
+        span{
+          margin: 0px 10px;
+        }
+        p{
+          display: inline;
+        }
+      }
+    }
+    .applicant-status-main-container{
+      .interview-schedule-container{
+        .interview-reschedule-conducted-section{
+          margin: auto;
+          .interview-main-details{
+            font-size: 20px;
+            @media(max-width: 767px) {
+              font-size: 16px;
+            }
+            label{
+              font-weight: 700;
+            }
+            span{
+              margin: 0px 10px;
+            }
+            p{
+              display: inline;
+            }
+          }
+          @media(max-width: 767px) {
+            width: 100% !important;
+          }
+        }
+        .interview-scheduled-section, .interview-cancel-section{
+          text-align: center;
+          p{
+            font-size: 16px;
+          }
+        }
+        .interview-scheduled-section .scheduled-details{
+          color: #6495ed;
+        }
+        .interview-cancel-section .cancelled-reason{
+          color: #fff;
+        }
+      }
+      .schedule-options-container{
+        .schedule-options-section{
+          font-size: 16px;
+          .interview-schedule-details{
+            margin-top: 20px;
+            .interview-slot{
+              height: 40px;
+              font-size: 16px;
+              p{
+                text-align: right;
+                color: #A8A8A8;
+              }
+              .slot-date-time{
+                text-align: center;
+                font-weight: 900;
+                color: #22A7F0;
+              }
+              @media(max-width: 767px) {
+                height: 60px;
+              }
+              .expired{
+                color: #ed143d;
+              }font-size: 18px;
+            }
+          }
+          .interview-details-reset{
+            text-decoration: underline;
+            color: #22A7F0;
+            cursor: pointer;
+            margin-bottom: 15px;
+          }
+        }
+        .preferred-schedule-section{
+          font-size: 16px;
+          margin-bottom: 20px;
+          .interview-section-or-divider{
+            hr{
+              width: 75%;
+              border-color: #000;
+              @media(max-width: 767px) {
+                width: 100%;
+              }
+            }
+            p{
+              text-align: center;
+              width: 40px;
+              margin: auto;
+              position: relative;
+              top: -30px;
+              background: #EFEFEF;
+            }
+          }
+          .preferred-date-time{
+            text-align: center;
+            .date-time-picker-wrapper{
+              width: 430px;
+              margin: auto;
+            .date-time-picker-container{
+              width: 200px;
+              padding: 0px;
+            input{
+              padding: 0px 0px 0px 10px;
+              @media(max-width: 767px) {
+                width: 100%;
+              }
+            }
+            .bootstrap-datetimepicker-widget[style]{
+              right: 0px !important;
+              left: -30px !important;
+            }
+            select{
+              padding: 0px 0px 0px 10px;
+              @media(max-width: 767px) {
+                float: right;
+              }
+            }
+            @media(max-width: 767px) {
+              width: 50%;
+            }
+          }
+          @media(max-width: 767px) {
+            width: 100%;
+          }
+        }
+          }
+          & > p{
+            text-align: justify;
+            color: #A8A8A8;
+          }
+        }
+      }
+    }
+  }
+}
+.applicant-home-container{
+  font-size: 16px;
+  line-height: 1.8;
+  .greetings{
+    color: #333;
+    text-align: center;
+    margin: 20px 0px;
+  }
+  .message-to-applicant{
+    text-align: justify;;
+  }
+  .account-contact-details{
+    text-align: justify;;
+    span{
+      text-align: none;
+      font-weight: 400;
+    }
+    a{
+      text-decoration: underline;
+      color: #333;
+    }
+  }
+}
+  #applicantPageLinks{
+    margin-top: 20px;
+    .applicant-page-link{
+      width: 32%;
+      height: 180px;
+      padding: 10px 0px;
+      margin-left: 1.2%;
+      text-align: center;
+      float: left;
+      p{
+        text-decoration: underline;
+      }
+      a{
+        color: #333;
+        text-decoration: none;
+        font-size: 18px;
+        img{
+          width: 80px;
+          height: 80px;
+          display: block;
+          margin: auto;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+      }
+      @media (max-width: 767px){
+        width: 100%
+      }
+    }
+  }
+#applicantInforForm{
+  border: 1px solid #ccc;
+  float: left;
+}
+#interviewConductedSection{
+  width: 290px;
+  .interview-main-details{
+    label{
+      width: 125px;
+    }
+  }
+}
+#interviewRescheduleSection{
+  width: 440px;
+  .interview-main-details{
+    label{
+      width: 195px;
+    }
+  }
+}
+#interviewNotScheduledText{
+  color: #989898;
+}
+/* Applicant content ****/
+
+/**** Etchy Inputs */
+.hx-textbox{
+  .etchy-textbox(40px);
+}
+.hx-textarea{
+  .etchy-textbox(80px);
+}
+.hx-select{
+  .etchy-select(40px);
+}
+.hx-radio-btns{
+  .etchy-radio-checkbox-btns(40px);
+}
+.hx-checkboxs{
+  .etchy-radio-checkbox-btns(40px);
+}
+.hx-number-field{
+  .etchy-textbox(40px);
+  &::-webkit-inner-spin-button, &::-webkit-outer-spin-button{
+    .appearance-none();
+  }
+}
+label.required{
+  &:after{
+    .required-label();
+  }
+}
+.hx-submit{
+  .etchy-submit();
+}
+.hx-form-field-description{
+  .etchy-form-field-description(12px);
+}
+/* Etchy Inputs ****/
+
+/**** Custom CSS */
+.has-value{
+  border: 1px solid #00d8bc;
+}
+.empty{
+  border: 1px solid #ff0000;
+}
+.display-none{
+  display: none;
+}
+.disabled{
+  pointer-events: none;
+  opacity: 0.5;
+}
+.mandatory-info{
+  color: #ff0000;
+  font-style: italic;
+  font-size: 12px;
+  padding: 0px 10px;
+}
+/* Custom CSS ****/

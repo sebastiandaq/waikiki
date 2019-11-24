@@ -1,0 +1,178 @@
+[{
+		"label": "JobTitle",
+		"description": "Senior Software Engineer"
+	}, {
+		"label": "Full Name",
+		"description": "with expanded initials",
+		"required": "required",
+		"type": "text"
+	}, {
+		"label": "Age",
+		"description": "",
+		"required": "required",
+		"type": "number"
+	}, {
+		"label": "Marital Status",
+		"description": "",
+		"required": "required",
+		"type": "select",
+		"options": ["Single", "Married", "Married with kid(s)"]
+	}, {
+		"label": "Phone Number",
+		"description": "",
+		"required": "required",
+		"type": "number"
+	}, {
+		"label": "Email",
+		"description": "Professional Email",
+		"required": "required",
+		"type": "email"
+	}, {
+		"label": "Educational Qualification",
+		"description": "Under Graduate",
+		"required": "required",
+		"type": "text"
+	}, {
+		"label": "Year of Passing",
+		"description": "Under Graduate",
+		"required": "required",
+		"type": "text"
+	},
+
+	{
+		"label": "Educational Qualification",
+		"description": "Post Graduate",
+		"required": "required",
+		"type": "text"
+	}, {
+		"label": "Year of Passing",
+		"description": "Post Graduate",
+		"required": "required",
+		"type": "text"
+	}, {
+		"label": "Relevant Experience",
+		"description": "in years",
+		"required": "required",
+		"type": "number"
+	}, {
+		"label": "How did you come to know about this job?",
+		"description": "Choose one from below",
+		"required": "required",
+		"type": "radio",
+		"options": [{
+			"label": "Mail",
+			"value": "mail"
+		}, {
+			"label": "Call from FE",
+			"value": "call"
+		}, {
+			"label": "Naukri.com",
+			"value": "naukri"
+		}, {
+			"label": "Other Job Sites",
+			"value": "otherjobsites"
+		}, {
+			"label": "Consultancy",
+			"value": "consultancy"
+		}, {
+			"label": "Employee Reference",
+			"value": "employeeref"
+		}, {
+			"label": "FE advertisement in your college",
+			"value": "collegead"
+		}, {
+			"label": "Other FE advertisement",
+			"value": "otherad"
+		}]
+	}, {
+		"label": "Name",
+		"description": "Consultant or Employee name, if applicable",
+		"required": "",
+		"type": "text"
+	}, {
+		"label": "Current Employer",
+		"description": "",
+		"required": "",
+		"type": "text"
+	}, {
+		"label": "Current Salary",
+		"description": "Annual CTC",
+		"required": "",
+		"type": "number"
+	}, {
+		"label": "Current Salary",
+		"description": "Monthly take home",
+		"required": "",
+		"type": "number"
+	}, {
+		"label": "Expected Salary",
+		"description": "Annual CTC",
+		"required": "",
+		"type": "number"
+	}, {
+		"label": "Expected Salary",
+		"description": "Monthly take home",
+		"required": "",
+		"type": "number"
+	}, {
+		"label": "Required Joining time",
+		"description": "",
+		"required": "",
+		"type": "text"
+	}, {
+		"label": "Reason for your job switchover",
+		"description": "",
+		"required": "",
+		"type": "text"
+	}, {
+		"label": "Any proposed examination leave",
+		"description": "if yes, when",
+		"required": "",
+		"type": "text"
+	}, {
+		"label": "Any proposed long leave",
+		"description": "(Marriage /Maternity etc.)",
+		"required": "",
+		"type": "text"
+	}, {
+		"label": "Required Joining time",
+		"description": "",
+		"required": "",
+		"type": "text"
+	}, {
+		"label": "Required Joining time",
+		"description": "",
+		"required": "",
+		"type": "text"
+	}, {
+		"label": "Father’s name & profession",
+		"description": "",
+		"required": "",
+		"type": "text"
+	}, {
+		"label": "Mother’s name & profession",
+		"description": "",
+		"required": "",
+		"type": "text"
+	}, {
+		"label": "Sibling(s)’s name(s) & profession(s)",
+		"description": "",
+		"required": "",
+		"type": "textarea"
+	}, {
+		"label": "Spouse’s name & profession",
+		"description": "",
+		"required": "",
+		"type": "text"
+	}, {
+		"label": "What are your career aspirations and expectations from FE",
+		"description": "",
+		"required": "",
+		"type": "text"
+	}, {
+		"label": "Any surgery undergone/ any major illness in the past",
+		"description": "",
+		"required": "",
+		"type": "text"
+	}
+]
