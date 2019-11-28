@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as AuthenticationService from '../../actions/authentication';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import { browserHistory } from 'react-router';
 
 class Register extends Component {
 
@@ -34,7 +35,10 @@ class Register extends Component {
         };
         console.log(user);
 
-        this.props.dispatch(AuthenticationService.registerUser(user))
+        this.props.dispatch(AuthenticationService.registerUser(user, this.context.router))
+        .then(() => {
+          browserHistory.push('/login');
+        })
         .catch((err) => {
           console.log(err);
           this.setState({ errors: err.mensaje });
