@@ -5,26 +5,16 @@ import router from './router';
 import db_connection from './controllers/dbConnection';
 const userRouter = require('./routers/Users');
 
-const app = express();
-
-
 const db = db_connection();
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-app.use(userRouter);
-
-app.use(cors({
-origin: ["http://localhost:4000"],
-methods: ["GET", "POST", "OPTIONS"],
-allowedHeaders: ["Content-Type", "Authorization"]
-}));
-
-app.use(bodyParser.urlencoded({     
+const app = express();
+app.use(cors());
+app.use(bodyParser.urlencoded({
   extended: true
 }));
-
-
 app.use(bodyParser.json({ type: '*/*' }));
+app.use(userRouter);
 
 router(app);
 
@@ -36,5 +26,5 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.listen(app.get("port"), () => {
-  console.log(`Find the server at: http://localhost:${app.get("port")}/`); 
+  console.log(`Find the server at: http://localhost:${app.get("port")}/`);
 });
