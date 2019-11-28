@@ -8,10 +8,10 @@ Router.post('/users', async (req, res) => {
     // CREA UN NUEVO User
     try {
       console.log(req.body)
-        const Usuario = new Usuario(req.body)
-        await Usuario.save()
-        const token = await Usuario.generateAuthToken()
-        res.status(200).send({ codigo: 200, mensaje:'Registro OK', Usuario, token })
+        const User = new Usuario(req.body)
+        await User.save()
+        const token = await User.generateAuthToken()
+        res.status(200).send({ codigo: 200, mensaje:'Registro OK', User, token })
     } catch (error) {
       console.log("register error: " + error)
         if(error.code == 11000)
@@ -24,12 +24,12 @@ Router.post('/users/login', async(req, res) => {
     // ACCESO DE UserS REGISTRADOS
     try {
         const { email, password } = req.body
-        const Usuario = await Usuario.findByCredentials(email, password)
-        if (!Usuario) {
+        const user = await Usuario.findByCredentials(email, password)
+        if (!user) {
             return res.status(400).send({codigo: 400, error: 'Error! Verifique sus credenciales'})
         }
-        const token = await Usuario.generateAuthToken()
-        res.send({ codigo: 200, mensaje: 'Inicio de sesión exitoso', Usuario, token })
+        const token = await user.generateAuthToken()
+        res.send({ codigo: 200, mensaje: 'Inicio de sesión exitoso', user, token })
     } catch (error) {
       console.log("login error: " + error)
         res.status(400).send({ codigo: 400, mensaje: 'Error durante el login' })

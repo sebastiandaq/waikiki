@@ -40,6 +40,7 @@ usuarioSchema.pre('save', async function (next) {
     const usuario = this
     if (usuario.isModified('password')) {
         usuario.password = await bcrypt.hash(usuario.password, 8)
+        console.log("user's password: " + usuario.password)
     }
     next()
 })
@@ -47,7 +48,7 @@ usuarioSchema.pre('save', async function (next) {
 usuarioSchema.methods.generateAuthToken = async function() {
     // CREA UN TOKEN DE AUTENTICACION PARA EL USUARIO
     const usuario = this
-    const token = jwt.sign({_id: usuario._id}, process.env.JWT_KEY)
+    const token = jwt.sign({_id: usuario._id}, "fo0d1E5U4d3cuwOqmLHkPzk7m4x")
     usuario.tokens = usuario.tokens.concat({token})
     await usuario.save()
     return token
