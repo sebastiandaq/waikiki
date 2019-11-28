@@ -8,10 +8,10 @@ Router.post('/users', async (req, res) => {
     // CREA UN NUEVO User
     try {
       console.log(req.body)
-        const User = new Usuario(req.body)
-        await User.save()
-        const token = await User.generateAuthToken()
-        res.status(200).send({ codigo: 200, mensaje:'Registro OK', User, token })
+        const user = new Usuario(req.body)
+        await user.save()
+        const token = await user.generateAuthToken()
+        res.status(200).send({ codigo: 200, mensaje:'Registro OK', user, token })
     } catch (error) {
       console.log("register error: " + error)
         if(error.code == 11000)
