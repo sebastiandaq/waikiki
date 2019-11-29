@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import router from './router';
 import db_connection from './controllers/dbConnection';
 const userRouter = require('./routers/Users');
+const cartRouter = require('./routers/Cart');
 
 const db = db_connection();
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json({ type: '*/*' }));
 app.use(userRouter);
+app.use(cartRouter);
 
 router(app);
 

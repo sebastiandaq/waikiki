@@ -1,7 +1,7 @@
 import React,{PropTypes} from 'react';
 
 
-const CartTotal = ({cartList}) => {
+const CartTotal = ({cartList, onConfirm}) => {
   const totalItems = () => {
     let totalItems = 0;
     cartList.map(cart_item => {
@@ -9,6 +9,7 @@ const CartTotal = ({cartList}) => {
     });
     return totalItems;
   };
+
   const totalCost = () => {
     let totalCost = 0;
     cartList.map(cart_item => {
@@ -16,6 +17,7 @@ const CartTotal = ({cartList}) => {
     });
     return totalCost;
   };
+
   return (
     <div className="cart-total-card-wrapper">
       <div className="row">
@@ -33,7 +35,7 @@ const CartTotal = ({cartList}) => {
               <div className="items-ordered"></div>
             </div>
             <div className="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-              <div className="checkout-btn">CONFIRMAR</div>
+              <div className="checkout-btn" onClick={onConfirm}>CONFIRMAR</div>
               <div className="cart-total-price">
                 ARS. {totalCost()}
               </div>
@@ -44,6 +46,7 @@ const CartTotal = ({cartList}) => {
     </div>
   );
 };
+
 CartTotal.propTypes = {
   cartList: PropTypes.array.isRequired
 };

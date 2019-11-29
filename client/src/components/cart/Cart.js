@@ -4,14 +4,16 @@ import {bindActionCreators} from 'redux';
 import * as cartActions from '../../actions/cartActions';
 import CartCards from './CartCards';
 import CartTotal from './CartTotal';
+import CartApi from '../../api/mockCartApi';
+import { browserHistory } from 'react-router';
 
 class Cart extends React.Component {
   constructor(props, context) {
     super(props, context);
 
-    
-    this.deleteFromCart = this.deleteFromCart.bind(this); 
+    this.deleteFromCart = this.deleteFromCart.bind(this);
     this.updateExistingItemInCart = this.updateExistingItemInCart.bind(this);
+    this.confirmCart = this.confirmCart.bind(this);
   }
 
   deleteFromCart(event) {
@@ -47,11 +49,40 @@ class Cart extends React.Component {
     }
   }
 
+  confirmCart() {
+    const finalCart = {
+      userID: this.props.user._id,
+      items: []
+    };
+
+    this.props.cart.array.forEach(element => {
+      finalCart.items.push({
+        title: element.title,
+        description: element.description,
+        price: element.price,
+        image: element.image,
+        category: element.category
+      });
+    });
+
+    console.log(">>>>cart being confirmed: " + finalCart);
+
+    CartApi.confirmCart(finalCart)
+    .then(() => {
+      console.log(">>>>>>cart confirmed");
+      browserHistory.push('/gallery');
+    })
+    .catch((err) => {
+      console.log(">>>>>>error while confirming cart: " + err);
+      // SOME OTHER ERROR HANDLING...
+    });
+  }
+
   render() {
     return (
       <div className="cart-wrapper">
         <div className="cart-container container">
-          <CartTotal cartList={this.props.cart}/>
+          <CartTotal cartList={this.props.cart} onConfirm={this.confirmCart}/>
           <CartCards cartList={this.props.cart} onDelete={this.deleteFromCart} updateExistingItemInCart={this.updateExistingItemInCart}/>
         </div>
       </div>
@@ -68,7 +99,9 @@ Cart.propTypes = {
 function mapStateToProps(state) {
   return {
     cart: state.cart,
-    items: state.items
+    items: state.items,
+    isAuthenticated: state.authReducer.isAuthenticated,
+    user: state.authReducer.user
   };
 }
 

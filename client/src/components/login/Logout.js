@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect} from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as AuthenticationService from '../../actions/authentication';
+import * as AuthenticationService from '../../api/authentication';
 import {bindActionCreators} from 'redux';
 import { browserHistory } from 'react-router';
 

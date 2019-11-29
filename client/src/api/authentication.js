@@ -1,4 +1,4 @@
-import Http from '../api/Http';
+import Http from './Http';
 import * as userActions from '../actions/userActions';
 
 export function registerUser(user) {

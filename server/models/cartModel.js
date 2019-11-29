@@ -2,14 +2,21 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-const cartSchema = new Schema({
-  id: Number,
+const itemCartSchema = mongoose.Schema({
   title: String,
   description: String,
   price: Number,
   image: String,
-  category: String,
-  count: Number
+  category: String
+});
+
+const cartSchema = new Schema({
+  userId: String,
+  items: [itemCartSchema]
 }, { collection : 'cart' });
 
-export default mongoose.model('cart', cartSchema);
+cartSchema.set('timestamps', true);
+
+const Pedido = mongoose.model('Pedido', cartSchema);
+
+module.exports = Pedido;

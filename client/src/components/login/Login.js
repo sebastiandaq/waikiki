@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as AuthenticationService from '../../actions/authentication';
+import * as AuthenticationService from '../../api/authentication';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import { browserHistory } from 'react-router';

@@ -1,4 +1,5 @@
 import delay from './delay';
+import Http from './Http';
 
 const cart = [
   {
@@ -32,6 +33,7 @@ const cart = [
     count: 3
   }
 ];
+
 class CartApi {
   static getCartDetails() {
     return new Promise((resolve) => {
@@ -76,6 +78,23 @@ class CartApi {
         // resolve(Object.assign(newCartItem,newCartItem.count = 9));
       }, delay);
     });
+  }
+
+  static confirmCart(cart) {
+    return dispatch => (
+      new Promise((resolve, reject) => {
+        Http.post('http://localhost:4001/carts', cart)
+          .then((res) => {
+            console.log(res.data);
+            return resolve();
+          })
+          .catch((err) => {
+            console.log(err);
+            const error = err.response.data;
+            return reject(error);
+          });
+      })
+    );
   }
 }
 
