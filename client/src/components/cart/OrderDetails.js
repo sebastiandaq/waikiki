@@ -1,6 +1,14 @@
 import React, {PropTypes} from 'react';
 
 const OrderDetails = ({order}) => {
+  const totalCost = (items) => {
+    let totalCost = 0;
+    items.map(cart_item => {
+      totalCost = totalCost+(cart_item.price*cart_item.count);
+    });
+    return totalCost;
+  };
+
   return (
     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div className="cart-item">
@@ -21,6 +29,12 @@ const OrderDetails = ({order}) => {
                 </div>
               );
             })}
+          </div>
+        </div>
+
+        <div className="col-lg-3 col-md-3">
+          <div className="order-img-price-section">
+            <div className="order-item-price">ARS. {totalCost(order.items)}</div>
           </div>
         </div>
 
