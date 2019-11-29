@@ -3,17 +3,22 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as cartActions from '../../actions/cartActions';
 import * as CartServices from '../../api/cart';
+import OrderDetails from '../cart/OrderDetails';
 
 class Orders extends React.Component {
   constructor(props, context) {
     super(props, context);
+
+    this.state = {
+      orders: this.props.orders
+    };
   }
 
   componentWillMount() {
     this.props.actions2.getUserCarts(this.props.user.user)
     .then((res) => {
       console.log(">>>>>>loading user's carts");
-      this.props.orders = res.data.pedidos;
+      this.setState({ orders: res.data.pedidos });
     })
     .catch((err) => {
       console.log(">>>>>>error while loading user's cartss: " + err);
@@ -21,9 +26,17 @@ class Orders extends React.Component {
   }
 
   render() {
+
+    const { orders } = this.state;
+
     return (
       <div className="cart-wrapper">
         <div className="cart-container container">
+          {orders && orders.length > 0 && orders.map((order, index) => {
+            return (
+              <OrderDetails order={order}/>
+            );
+          })}
         </div>
       </div>
     );
