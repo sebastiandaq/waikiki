@@ -20,9 +20,7 @@ export default function cartReducer(state = initialState.cart, action) {
         ...state.filter(item => item.id !== action.item_id)
       ];
     case types.CLEAN_CART:
-      return [
-        ...state.length = 0
-      ];
+      return [];
     default:
       return state;
   }

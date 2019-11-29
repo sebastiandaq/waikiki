@@ -3,6 +3,7 @@ import initialState from './initialState';
 
 const authLogin = (state, payload) => {
   localStorage.setItem('userData', JSON.stringify(payload));
+  // localStorage.setItem('accessToken', payload.token);
 
   const stateObj = Object.assign({}, state, {
     isAuthenticated: true,

@@ -2,7 +2,6 @@ const jwt = require('jsonwebtoken')
 const Usuario = require('../models/userModel')
 
 const Auth = async(req, res, next) => {
-  console.log("token at logout: " + req.header('Authorization'))
     const token = req.header('Authorization').replace('Bearer ', '')
     const data = jwt.verify(token, "fo0d1E5U4d3cuwOqmLHkPzk7m4x")
     try {

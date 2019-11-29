@@ -2,8 +2,8 @@ import axios from 'axios';
 import store from '../index';
 import * as userActions from '../actions/userActions';
 
-const token = localStorage.getItem('accessToken');
-axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+// const token = localStorage.getItem('accessToken');
+// axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 
 axios.interceptors.response.use(
   response => response,

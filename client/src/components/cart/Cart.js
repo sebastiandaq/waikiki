@@ -51,7 +51,7 @@ class Cart extends React.Component {
 
   confirmCart() {
     const finalCart = {
-      userID: this.props.user.user._id,
+      userId: this.props.user.user._id,
       items: []
     };
 
@@ -65,7 +65,7 @@ class Cart extends React.Component {
       });
     });
 
-    console.log(">>>>cart being confirmed: " + finalCart);
+    console.log(">>>>cart being confirmed: " + JSON.stringify(finalCart));
 
     this.props.actions2.confirmCart(finalCart)
     .then(() => {
@@ -74,7 +74,6 @@ class Cart extends React.Component {
     })
     .catch((err) => {
       console.log(">>>>>>error while confirming cart: " + err);
-      // SOME OTHER ERROR HANDLING...
     });
   }
 
