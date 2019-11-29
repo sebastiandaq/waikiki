@@ -41,7 +41,7 @@ class Header extends React.Component {
                 <HeaderBrand activateHomeBackground={this.activateHomeBackground}/>
 
                 <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <HeaderLeftLink activateBackground={this.activateBackground} isAuthenticated={this.props.isAuthenticated}/>
+                  <HeaderLeftLink activateBackground={this.activateBackground}/>
                   <HeaderRightLink cardLength={this.state.count} isAuthenticated={this.props.isAuthenticated}/>
                 </div>
               </div>
