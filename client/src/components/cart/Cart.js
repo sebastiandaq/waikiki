@@ -61,7 +61,8 @@ class Cart extends React.Component {
         description: element.description,
         price: element.price,
         image: element.image,
-        category: element.category
+        category: element.category,
+        count: element.count
       });
     });
 
