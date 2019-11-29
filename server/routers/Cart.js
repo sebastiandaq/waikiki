@@ -19,10 +19,8 @@ Router.post('/carts', Auth, async (req, res) => {
 })
 
 Router.get('/carts/:userId', Auth, async(req, res) => {
-  console.log("buscando pedidos de: " + req.params.userID)
-
   try {
-    const pedidos = await Pedido.find({userId: req.params.userID})
+    const pedidos = await Pedido.find({userId: req.params.userId})
     if (!pedidos) {
         return res.status(204).send({codigo: 204, error: 'No hay pedidos'})
     }
