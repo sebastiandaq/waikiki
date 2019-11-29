@@ -1,5 +1,5 @@
 import React,{PropTypes} from 'react';
-const ItemsCard = ({jewel, onAdd}) => {
+const ItemsCard = ({jewel, onAdd, canConsume}) => {
   let jewelDescription = jewel.description;
   let availablity;
   if(jewelDescription.length > 60) {
@@ -18,9 +18,11 @@ const ItemsCard = ({jewel, onAdd}) => {
           </div>
           <div className="item-card-content-section">
             <div className="item-price">ARS. {jewel.price}</div>
-            <div className={!availablity ? "item-stock disable": "item-stock"} data-id={jewel.id} onClick={onAdd} title="Add to cart">
-              {availablity && <span className="glyphicon glyphicon-shopping-cart"></span>}
-            </div>
+            {canConsume &&
+              <div className={!availablity ? "item-stock disable": "item-stock"} data-id={jewel.id} onClick={onAdd} title="Add to cart">
+                {availablity && <span className="glyphicon glyphicon-shopping-cart"></span>}
+              </div>
+            }
             <div className="item-description">{jewelDescription}</div>
           </div>
         </div>

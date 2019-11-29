@@ -47,14 +47,10 @@ class GalleryMain extends React.Component {
   render() {
     const gallery = this.props;
 
-    if (this.props.isAuthenticated === false) {
-      browserHistory.push('/');
-   }
-
     return (
       <div className="gallery-wrapper">
         <div className="container">
-          <GalleryCards items={gallery.items} onAdd={this.addToCart}/>
+          <GalleryCards items={gallery.items} onAdd={this.addToCart} canConsume={this.props.isAuthenticated}/>
         </div>
       </div>
     );
