@@ -132,6 +132,11 @@ body {
   padding-top: 10px;
   height: 165px;
 }
+.order-img-price-section img {
+  display: block;
+  width: 40%;
+  margin: auto;
+}
 .order-item-price{
   width: 70%;
   background: #5fa8fb;
@@ -141,10 +146,8 @@ body {
   padding: 15px 0px;
   text-align: center;
 }
-.order-img-price-section img {
-  display: block;
-  width: 70%;
-  margin: auto;
+.order-text-content-section {
+  padding-top: 25px;
 }
 
 /*Cart Page Starts*/

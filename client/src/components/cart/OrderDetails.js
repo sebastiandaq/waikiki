@@ -32,7 +32,7 @@ const OrderDetails = ({order}) => {
           </div>
         </div>
 
-        <div className="col-lg-3 col-md-3">
+        <div className="col-lg-3 col-md-3 col-sm-4 col-xs-12">
           <div className="order-img-price-section">
             <div className="order-item-price">ARS. {totalCost(order.items)}</div>
           </div>
