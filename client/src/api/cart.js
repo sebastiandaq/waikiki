@@ -16,3 +16,17 @@ export function confirmCart(cart) {
     })
   );
 }
+
+export function getUserCarts(user) {
+  return () => (
+    new Promise((resolve, reject) => {
+      Http.get('http://localhost:4001/carts/' + user._id)
+        .then((res) => resolve(res))
+        .catch((err) => {
+          console.log(err);
+          const error = err.response.data;
+          return reject(error);
+        });
+    })
+  );
+}
