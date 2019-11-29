@@ -67,7 +67,7 @@ class Cart extends React.Component {
 
     console.log(">>>>cart being confirmed: " + finalCart);
 
-    CartServices.confirmCart(finalCart)
+    this.props.dispatch(CartServices.confirmCart(finalCart))
     .then(() => {
       console.log(">>>>>>cart confirmed");
       browserHistory.push('/gallery');
