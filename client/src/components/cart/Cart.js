@@ -67,7 +67,7 @@ class Cart extends React.Component {
 
     console.log(">>>>cart being confirmed: " + finalCart);
 
-    this.props.dispatch(CartServices.confirmCart(finalCart))
+    this.props.actions2.confirmCart(finalCart)
     .then(() => {
       console.log(">>>>>>cart confirmed");
       browserHistory.push('/gallery');
@@ -107,7 +107,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(cartActions, dispatch)
+    actions: bindActionCreators(cartActions, dispatch),
+    actions2: bindActionCreators(CartServices, dispatch)
   };
 }
 
