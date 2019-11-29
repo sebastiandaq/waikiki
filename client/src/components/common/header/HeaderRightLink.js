@@ -30,6 +30,7 @@ const HeaderRightLink = ({cardLength, isAuthenticated}) => {
     );
   }
 };
+
 HeaderRightLink.propTypes = {
   cardLength: PropTypes.number.isRequired
 };
