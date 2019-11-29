@@ -1,21 +1,11 @@
-import axios from 'axios';
+import Http from '../api/Http';
+import * as userActions from '../actions/userActions';
 
-// export const registerUser = (user, history) => dispatch => {
-//     axios.post('http://localhost:4001/users/', user)
-//             .then(() => history.push('/login'))
-//             .catch(err => {
-//                 dispatch({
-//                     type: GET_ERRORS,
-//                     payload: err.response
-//                 });
-//             });
-// };
-
-export function registerUser(user, history) {
+export function registerUser(user) {
   return () => (
     new Promise((resolve, reject) => {
-      axios.post('http://localhost:4001/users', user)
-        .then(() => history.push('/login'))
+      Http.post('http://localhost:4001/users', user)
+        .then((res) => resolve(res))
         .catch((err) => {
           console.log(err);
           const error = err.response.data;
@@ -28,11 +18,28 @@ export function registerUser(user, history) {
 export function loginUser(user) {
   return dispatch => (
     new Promise((resolve, reject) => {
-      axios.post('http://localhost:4001/users/login', user)
+      Http.post('http://localhost:4001/users/login', user)
         .then((res) => {
           console.log(res.data);
 
-          dispatch(action.authLogin(res.data));
+          dispatch(userActions.authLogin(res.data));
+          return resolve();
+        })
+        .catch((err) => {
+          console.log(err);
+          const error = err.response.data;
+          return reject(error);
+        });
+    })
+  );
+}
+
+export function logoutUser() {
+  return dispatch => (
+    new Promise((resolve, reject) => {
+      Http.post('http://localhost:4001/users/account/logout')
+        .then(() => {
+          dispatch(userActions.authLogout());
           return resolve();
         })
         .catch((err) => {

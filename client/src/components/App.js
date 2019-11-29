@@ -6,13 +6,13 @@ class App extends React.Component{
   constructor(props, context){
     super(props, context);
     this.state={
-      sesionOK: JSON.parse(localStorage.getItem('sesionOK')) || false,
-      userData: JSON.parse(localStorage.getItem('userData')) || {},
+      sesionOK: this.props.isAuthenticated,
+      userData: this.props.user || {},
       login:false,
       register:false,
       error:null,
       token:null
-    }
+    };
   }
 
   render() {
@@ -30,4 +30,9 @@ App.propTypes = {
   children: PropTypes.object.isRequired
 };
 
-export default connect()(App);
+const mapStateToProps = state => ({
+	isAuthenticated: state.authReducer.isAuthenticated,
+	user: state.authReducer.user
+});
+
+export default connect(mapStateToProps)(App);

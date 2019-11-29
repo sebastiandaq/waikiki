@@ -9,3 +9,6 @@ export const DELETE_FROM_CART_SUCCESS = 'DELETE_FROM_CART_SUCCESS';
 
 export const GET_ERRORS = 'GET_ERRORS';
 export const SET_CURRENT_USER = 'SET_CURRENT_USER';
+export const AUTH_CHECK = 'AUTH_CHECK';
+export const AUTH_LOGOUT = 'AUTH_LOGOUT';
+export const RELOAD_USER = 'RELOAD_USER';

@@ -9,7 +9,7 @@ class Header extends React.Component {
     super(props, context);
 
     this.state = {count: 0};
-    this.activateBackground = this.activateBackground.bind(this); 
+    this.activateBackground = this.activateBackground.bind(this);
     this.activateHomeBackground = this.activateHomeBackground.bind(this);
   }
 
@@ -18,7 +18,7 @@ class Header extends React.Component {
     nextProps.cart.map(item => {
       return count = count+item.count;
     });
-    this.state = {count:count}; 
+    this.state = {count:count};
   }
 
   activateBackground(event) {
@@ -41,8 +41,8 @@ class Header extends React.Component {
                 <HeaderBrand activateHomeBackground={this.activateHomeBackground}/>
 
                 <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <HeaderLeftLink activateBackground={this.activateBackground}/>
-                  <HeaderRightLink cardLength={this.state.count}/>
+                  <HeaderLeftLink activateBackground={this.activateBackground} isAuthenticated={this.props.isAuthenticated}/>
+                  <HeaderRightLink cardLength={this.state.count} isAuthenticated={this.props.isAuthenticated}/>
                 </div>
               </div>
             </nav>
@@ -54,12 +54,14 @@ class Header extends React.Component {
 
 Header.propTypes = {
   cart: PropTypes.array.isRequired
-  
+
 };
 
 function mapStateToProps(state) {
   return {
-    cart: state.cart
+    cart: state.cart,
+    isAuthenticated: state.authReducer.isAuthenticated,
+    user: state.authReducer.user
   };
 }
 

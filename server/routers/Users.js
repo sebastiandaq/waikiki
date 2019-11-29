@@ -44,6 +44,7 @@ Router.get('/users/account', Auth, async(req, res) => {
 Router.post('/users/account/logout', Auth, async (req, res) => {
     // CERRAR SESION DEL USUARIO
     try {
+      console.log("llego a endpooint: " + req.headers)
         req.Usuario.tokens = req.Usuario.tokens.filter((token) => {
             return token.token != req.token
         })

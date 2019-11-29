@@ -9,6 +9,7 @@ import Cart from './components/cart/Cart';
 import NotFound from './components/home/NotFound';
 import Register from './components/register/Register';
 import Login from './components/login/Login';
+import Logout from './components/login/Logout';
 
 export default (
   <Route path="/" component={App}>
@@ -19,6 +20,7 @@ export default (
     <Route path="/cart" component={Cart}/>
     <Route path="/register" component={Register}/>
     <Route path="/login" component={Login}/>
+    <Route path="/logout" component={Logout}/>
     <Route path="/*" component={NotFound}/>
   </Route>
 );

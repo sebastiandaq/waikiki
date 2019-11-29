@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as AuthenticationService from '../../actions/authentication';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import { browserHistory } from 'react-router';
 
 class Login extends Component {
 
@@ -32,6 +33,9 @@ class Login extends Component {
         console.log(user);
 
         this.props.dispatch(AuthenticationService.loginUser(user))
+        .then(() => {
+          browserHistory.push('/gallery');
+        })
         .catch((err) => {
           console.log(err);
           this.setState({ errors: err });
