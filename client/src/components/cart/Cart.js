@@ -51,11 +51,11 @@ class Cart extends React.Component {
 
   confirmCart() {
     const finalCart = {
-      userID: this.props.user._id,
+      userID: this.props.user.user._id,
       items: []
     };
 
-    this.props.cart.array.forEach(element => {
+    this.props.cart.forEach(element => {
       finalCart.items.push({
         title: element.title,
         description: element.description,
