@@ -79,6 +79,10 @@ class Cart extends React.Component {
   }
 
   render() {
+    if (this.props.isAuthenticated === false) {
+      browserHistory.push('/');
+   }
+
     return (
       <div className="cart-wrapper">
         <div className="cart-container container">

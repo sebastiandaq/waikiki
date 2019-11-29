@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux';
 import GalleryCards from './GalleryCards';
 import * as itemsActions from '../../actions/itemActions';
 import * as cartActions from '../../actions/cartActions';
-
+import { browserHistory } from 'react-router';
 
 class GalleryMain extends React.Component {
   constructor(props, context) {
@@ -46,6 +46,11 @@ class GalleryMain extends React.Component {
 
   render() {
     const gallery = this.props;
+
+    if (this.props.isAuthenticated === false) {
+      browserHistory.push('/');
+   }
+
     return (
       <div className="gallery-wrapper">
         <div className="container">
@@ -65,7 +70,9 @@ GalleryMain.propTypes = {
 function mapStateToProps(state) {
   return {
     items: state.items,
-    cart: state.cart
+    cart: state.cart,
+    isAuthenticated: state.authReducer.isAuthenticated,
+    user: state.authReducer.user
   };
 }
 

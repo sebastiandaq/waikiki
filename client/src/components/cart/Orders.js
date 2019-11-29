@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import * as cartActions from '../../actions/cartActions';
 import * as CartServices from '../../api/cart';
 import OrderDetails from '../cart/OrderDetails';
+import { browserHistory } from 'react-router';
 
 class Orders extends React.Component {
   constructor(props, context) {
@@ -14,18 +15,26 @@ class Orders extends React.Component {
     };
   }
 
-  componentWillMount() {
-    this.props.actions2.getUserCarts(this.props.user.user)
-    .then((res) => {
-      console.log(">>>>>>loading user's carts");
-      this.setState({ orders: res.data.pedidos });
-    })
-    .catch((err) => {
-      console.log(">>>>>>error while loading user's cartss: " + err);
-    });
+  componentDidMount() {
+    if (this.props.isAuthenticated === false) {
+      browserHistory.push('/');
+   } else {
+      this.props.actions2.getUserCarts(this.props.user.user)
+      .then((res) => {
+        console.log(">>>>>>loading user's carts");
+        this.setState({ orders: res.data.pedidos });
+      })
+      .catch((err) => {
+        console.log(">>>>>>error while loading user's cartss: " + err);
+      });
+    }
   }
 
   render() {
+
+    if (this.props.isAuthenticated === false) {
+      browserHistory.push('/');
+   }
 
     const { orders } = this.state;
 
