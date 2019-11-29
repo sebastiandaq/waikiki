@@ -48,6 +48,11 @@ class Login extends Component {
         return(
         <div className="container" style={{ marginTop: '50px', width: '700px'}}>
             <h2 style={{marginBottom: '40px'}}>Login</h2>
+
+            {this.state.errors.mensaje &&
+              <h3 style={{marginBottom: '40px'}}>{this.state.errors.mensaje}</h3>
+            }
+
             <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
                     <input
