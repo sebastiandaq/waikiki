@@ -132,6 +132,20 @@ body {
   padding-top: 10px;
   height: 165px;
 }
+.order-item-price{
+  width: 70%;
+  background: #5fa8fb;
+  color: #fff;
+  margin: auto;
+  box-shadow: 1px 1px 10px #e8b7b7;
+  padding: 15px 0px;
+  text-align: center;
+}
+.order-img-price-section img {
+  display: block;
+  width: 70%;
+  margin: auto;
+}
 
 /*Cart Page Starts*/
 .cart-item {
