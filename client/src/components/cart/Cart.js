@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux';
 import * as cartActions from '../../actions/cartActions';
 import CartCards from './CartCards';
 import CartTotal from './CartTotal';
-import CartApi from '../../api/mockCartApi';
+import * as CartServices from '../../api/cart';
 import { browserHistory } from 'react-router';
 
 class Cart extends React.Component {
@@ -67,7 +67,7 @@ class Cart extends React.Component {
 
     console.log(">>>>cart being confirmed: " + finalCart);
 
-    CartApi.confirmCart(finalCart)
+    CartServices.confirmCart(finalCart)
     .then(() => {
       console.log(">>>>>>cart confirmed");
       browserHistory.push('/gallery');
