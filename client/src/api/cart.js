@@ -1,4 +1,5 @@
 import Http from './Http';
+import * as cartActions from '../actions/cartActions';
 
 export function confirmCart(cart) {
   return dispatch => (
@@ -6,6 +7,8 @@ export function confirmCart(cart) {
       Http.post('http://localhost:4001/carts', cart)
         .then((res) => {
           console.log(res.data);
+
+          dispatch(cartActions.cleanCart());
           return resolve();
         })
         .catch((err) => {
