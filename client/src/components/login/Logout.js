@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect} from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as AuthenticationService from '../../api/authentication';
 import {bindActionCreators} from 'redux';
@@ -13,13 +12,12 @@ class Logout extends React.Component {
     })
     .catch((err) => {
       console.log(err);
-      // SOME OTHER ERROR HANDLING...
     });
 	}
 
 	render() {
     return (
-      <Redirect to="/" />
+      <div></div>
     );
 	}
 }
