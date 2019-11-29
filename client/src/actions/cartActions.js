@@ -47,3 +47,9 @@ export function updateExistingItemInCart(addOrDelete, item) {
     });
   };
 }
+
+export function cleanCart() {
+  return {
+    type: types.CLEAN_CART
+  };
+}
