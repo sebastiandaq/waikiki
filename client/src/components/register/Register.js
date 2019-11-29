@@ -41,7 +41,7 @@ class Register extends Component {
         })
         .catch((err) => {
           console.log(err);
-          this.setState({ errors: err.mensaje });
+          this.setState({ errors: err });
           this.setState({ email: '', password: '', name: '', password_confirm: '' });
           // SOME OTHER ERROR HANDLING...
         });
@@ -51,6 +51,11 @@ class Register extends Component {
         return(
         <div className="container" style={{ marginTop: '50px', width: '700px'}}>
             <h2 style={{marginBottom: '40px'}}>Registro</h2>
+
+            {this.state.errors.mensaje &&
+              <h3 style={{marginBottom: '40px'}}>{this.state.errors.mensaje}</h3>
+            }
+
             <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
                     <input
