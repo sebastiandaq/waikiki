@@ -21,10 +21,10 @@ const HeaderRightLink = ({cardLength, isAuthenticated}) => {
     return (
       <ul className="nav navbar-nav navbar-right">
         <li>
-          <Link to="/register">Register</Link>
+          <Link to="/register">Registrarse</Link>
         </li>
         <li>
-          <Link to="/login">Login</Link>
+          <Link to="/login">Ingresar</Link>
         </li>
       </ul>
     );
