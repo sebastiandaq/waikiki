@@ -22,6 +22,11 @@ export function loginUser(user) {
         .then((res) => {
           console.log(res.data);
 
+          // We need to set auth headers before hydrating user data.
+          const { token } = res.data;
+          const accessToken = token.replace('Bearer ', '');
+          Http.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
+
           dispatch(userActions.authLogin(res.data));
           return resolve();
         })
